@@ -1,0 +1,1507 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for repository configurations">
+      
+      
+        <meta name="author" content="Rik Goldman">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../faq-reviews/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Governance & Automation - Repo Configs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-governance-and-technical-implementation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Repo Configs" class="md-header__button md-logo" aria-label="Repo Configs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Repo Configs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Governance & Automation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  FAQ Management
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Repo Configs" class="md-nav__button md-logo" aria-label="Repo Configs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Repo Configs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance & Automation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance & Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept-the-faq-governance-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Concept: The FAQ Governance Philosophy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 Concept: The FAQ Governance Philosophy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-faq-governance-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why FAQ Governance Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic Classification Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-check-enterprise-and-org-level-settings-for-actionsapp-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ How-To: Check Enterprise and Org-Level Settings for Actions/App Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ How-To: Check Enterprise and Org-Level Settings for Actions/App Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-web-ui-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Web UI Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A: Web UI Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-detect-enterprise-enforced-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Detect Enterprise-Enforced Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-verify-github-actions-availability-repo-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Verify GitHub Actions Availability (Repo Level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-inspect-workflow-write-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Inspect Workflow Write Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-terminal-command-line-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Terminal / Command Line Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B: Terminal / Command Line Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-check-organization-level-actions-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Check Organization-Level Actions Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-check-repository-level-actions-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Check Repository-Level Actions Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-check-default-workflow-permissions-token-write-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Check Default Workflow Permissions (Token Write Scopes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-implement-faq-validation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ How-To: Implement FAQ Validation Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ How-To: Implement FAQ Validation Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-the-auto-append-bot-preferred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: The Auto-Append Bot (Preferred)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-manual-organization-level-selection-alternative-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: Manual Organization-Level Selection (Alternative A)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-the-query-parameter-url-link-alternative-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: The Query Parameter URL Link (Alternative B)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-workflow-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Troubleshooting: Common Workflow Failures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting: Common Workflow Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-github-cli-fails-with-resource-not-accessible-by-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: GitHub CLI fails with "Resource not accessible by integration"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-workflow-is-not-triggering-on-faq-file-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: Workflow is not triggering on FAQ file changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-workflow-fails-on-enterprise-enforced-read-only-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Workflow fails on Enterprise-enforced read-only tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-reviewer-verification-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Reference: Reviewer Verification Checklists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Reference: Reviewer Verification Checklists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faq-structural-organization-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ Structural &amp; Organization Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-compliance-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Compliance Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PR Review Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept-the-faq-governance-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Concept: The FAQ Governance Philosophy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 Concept: The FAQ Governance Philosophy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-faq-governance-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why FAQ Governance Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic Classification Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-check-enterprise-and-org-level-settings-for-actionsapp-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ How-To: Check Enterprise and Org-Level Settings for Actions/App Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ How-To: Check Enterprise and Org-Level Settings for Actions/App Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-web-ui-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Web UI Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A: Web UI Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-detect-enterprise-enforced-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Detect Enterprise-Enforced Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-verify-github-actions-availability-repo-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Verify GitHub Actions Availability (Repo Level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-inspect-workflow-write-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Inspect Workflow Write Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-terminal-command-line-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Terminal / Command Line Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B: Terminal / Command Line Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-check-organization-level-actions-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Check Organization-Level Actions Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-check-repository-level-actions-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Check Repository-Level Actions Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-check-default-workflow-permissions-token-write-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Check Default Workflow Permissions (Token Write Scopes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-implement-faq-validation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ How-To: Implement FAQ Validation Checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ How-To: Implement FAQ Validation Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-the-auto-append-bot-preferred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: The Auto-Append Bot (Preferred)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-manual-organization-level-selection-alternative-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: Manual Organization-Level Selection (Alternative A)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-the-query-parameter-url-link-alternative-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: The Query Parameter URL Link (Alternative B)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-workflow-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Troubleshooting: Common Workflow Failures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting: Common Workflow Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-github-cli-fails-with-resource-not-accessible-by-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: GitHub CLI fails with "Resource not accessible by integration"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-workflow-is-not-triggering-on-faq-file-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: Workflow is not triggering on FAQ file changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-workflow-fails-on-enterprise-enforced-read-only-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Workflow fails on Enterprise-enforced read-only tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-reviewer-verification-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Reference: Reviewer Verification Checklists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Reference: Reviewer Verification Checklists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faq-structural-organization-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ Structural &amp; Organization Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-compliance-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Compliance Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq-governance-and-technical-implementation-guide">FAQ Governance and Technical Implementation Guide<a class="headerlink" href="#faq-governance-and-technical-implementation-guide" title="Permanent link">&para;</a></h1>
+<p>This document defines the architectural guidelines, content design principles, and automated verification workflows required to manage Frequently Asked Questions (FAQ) documentation. These policies ensure a high-quality user experience, rigorous data governance, clear separation of duties, and reliable audit trails.</p>
+<div class="admonition tip">
+<p class="admonition-title">See also</p>
+<p>For the human PR review workflow and guidance on handling out-of-scope content,
+see <a href="../faq-reviews/">FAQ PR Review Guide</a>.</p>
+</div>
+<h2 id="concept-the-faq-governance-philosophy">📖 Concept: The FAQ Governance Philosophy<a class="headerlink" href="#concept-the-faq-governance-philosophy" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In enterprise documentation management, FAQs present a unique challenge. While highly valuable for rapid self-service, unstructured FAQs quickly degrade into unmaintainable content dumps that obscure critical answers and contradict official product documentation.</p>
+</div>
+<h3 id="why-faq-governance-matters">Why FAQ Governance Matters<a class="headerlink" href="#why-faq-governance-matters" title="Permanent link">&para;</a></h3>
+<p>To maintain a trusted single source of truth, FAQ management must satisfy four core pillars:</p>
+<ol>
+<li><strong>User Experience:</strong> FAQ content must be concise, predictable, and rapidly scannable.</li>
+<li><strong>Governance &amp; Management:</strong> Topics must be structured within designated page boundaries to prevent sprawl.</li>
+<li><strong>Separation of Duties:</strong> Content writers propose changes; subject matter experts (SMEs) and docs architects certify structural and technical accuracy.</li>
+<li><strong>Auditability:</strong> Every FAQ page must maintain explicit metadata trace paths (such as <code>lastCertified</code> records) to verify factual relevancy over time.</li>
+</ol>
+<h3 id="topic-classification-model">Topic Classification Model<a class="headerlink" href="#topic-classification-model" title="Permanent link">&para;</a></h3>
+<p>All technical documentation must adhere to strict topic-based classification. FAQ pages are designated as <strong>Reference</strong> topics. They must point directly to, rather than duplicate, detailed procedural or conceptual pages:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Scannable QA Pair (Reference)]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>              │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>              └──► (Link to) ──► [Deep-Dive Guide (Task/Concept)]
+</code></pre></div>
+<ul>
+<li><strong>Concepts:</strong> Explain <em>how</em> and <em>why</em> a system behaves a certain way.</li>
+<li><strong>Tasks / How-Tos:</strong> Provide step-by-step instructions to achieve a specific goal.</li>
+<li><strong>Troubleshooting:</strong> Diagnose errors, describe failure modes, and provide mitigation paths.</li>
+<li><strong>FAQs (Reference):</strong> Provide rapid, direct answers (capped at 2–3 sentences) to highly isolated questions. If an FAQ answer must explain a concept or detail a procedure, <strong>it is misclassified</strong> and must be extracted to its own dedicated page.</li>
+</ul>
+<h2 id="how-to-check-enterprise-and-org-level-settings-for-actionsapp-support">🛠️ How-To: Check Enterprise and Org-Level Settings for Actions/App Support<a class="headerlink" href="#how-to-check-enterprise-and-org-level-settings-for-actionsapp-support" title="Permanent link">&para;</a></h2>
+<p>Before implementing automated enforcement, you must identify whether your GitHub Enterprise Cloud (GHEC) organization permits repository-level CI/CD automation. In GHEC, policies cascade down from the <strong>Enterprise</strong> to the <strong>Organization</strong>, and finally to the <strong>Repository</strong>. Policies enforced at the Enterprise level cannot be bypassed at the Org or Repo levels.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌────────────────────────────────────────────────────────┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│                   GHEC Policy Cascade                  │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│                                                        │
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│  Enterprise Policies  ──► Sets maximum allowed limits  │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│          │                                             │
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│          ▼                                             │
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│  Organization Rules   ──► Can restrict further         │
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│          │                                             │
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│          ▼                                             │
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│  Repository Settings  ──► Local configurations         │
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>└────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p>You can determine your permission status using the <strong>GitHub Web UI</strong> or directly from the <strong>Terminal</strong> via the GitHub CLI or API.</p>
+<h3 id="option-a-web-ui-procedure">Option A: Web UI Procedure<a class="headerlink" href="#option-a-web-ui-procedure" title="Permanent link">&para;</a></h3>
+<h4 id="step-1-detect-enterprise-enforced-policies">Step 1: Detect Enterprise-Enforced Policies<a class="headerlink" href="#step-1-detect-enterprise-enforced-policies" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a policy is enforced by the Enterprise, the setting toggles in your Organization and Repository will be grayed out, accompanied by a shield icon and the text: <em>"This setting is managed by your enterprise."</em></p>
+</div>
+<ol>
+<li>Navigate to your Organization's main page on GitHub.</li>
+<li>Click <strong>Settings</strong> in the top navigation bar of the organization.</li>
+<li>In the left sidebar, click <strong>Actions</strong> &gt; <strong>General</strong>.</li>
+<li>Check for enterprise lock banners. If Actions are disabled here by the Enterprise, <strong>Method 1</strong> and <strong>Method 3</strong> are completely unavailable. You must use <strong>Method 2 (Alternative A)</strong> or <strong>Method 3 (Alternative B)</strong>.</li>
+</ol>
+<h4 id="step-2-verify-github-actions-availability-repo-level">Step 2: Verify GitHub Actions Availability (Repo Level)<a class="headerlink" href="#step-2-verify-github-actions-availability-repo-level" title="Permanent link">&para;</a></h4>
+<p>If the Enterprise permits organization-level control, verify your local repository settings:</p>
+<ol>
+<li>Navigate to your repository's main page on GitHub.</li>
+<li>Click <strong>Settings</strong> in the top navigation bar. <em>(If you do not see "Settings", you lack repository Administrator/Maintainer permissions.)</em></li>
+<li>In the left sidebar, click the <strong>Actions</strong> dropdown, then select <strong>General</strong>.</li>
+<li>Review the <strong>Policies</strong> section.</li>
+</ol>
+<h4 id="step-3-inspect-workflow-write-permissions">Step 3: Inspect Workflow Write Permissions<a class="headerlink" href="#step-3-inspect-workflow-write-permissions" title="Permanent link">&para;</a></h4>
+<p>For automation scripts to write directly to a PR description or alter metadata, the default runner environment token (<code>GITHUB_TOKEN</code>) must possess explicit write permissions:</p>
+<ol>
+<li>Scroll down the <strong>Actions &gt; General</strong> settings page to <strong>Workflow permissions</strong>.</li>
+<li>Verify that <strong>Read and write permissions</strong> is selected.</li>
+<li>Ensure that the checkbox <strong>Allow GitHub Actions to create and approve pull requests</strong> is checked.</li>
+</ol>
+<h3 id="option-b-terminal-command-line-procedure">Option B: Terminal / Command Line Procedure<a class="headerlink" href="#option-b-terminal-command-line-procedure" title="Permanent link">&para;</a></h3>
+<p>If you are managing automation at scale, you can query these GHEC policies programmatically using the GitHub CLI (<code>gh</code>) or <code>curl</code> with the GitHub REST API.</p>
+<h4 id="step-1-check-organization-level-actions-permissions">Step 1: Check Organization-Level Actions Permissions<a class="headerlink" href="#step-1-check-organization-level-actions-permissions" title="Permanent link">&para;</a></h4>
+<p>Run this command to check if GitHub Actions are enabled globally for your organization and see if they are restricted.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">GitHub CLI</label><label for="__tabbed_1_2">cURL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gh<span class="w"> </span>api<span class="w"> </span>orgs/<span class="o">{</span>org_name<span class="o">}</span>/actions/permissions
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GITHUB_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/vnd.github+json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">     </span>https://api.github.com/orgs/<span class="o">{</span>org_name<span class="o">}</span>/actions/permissions
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>What to look for in the JSON response:</strong></p>
+<ul>
+<li><code>enabled_repositories</code>: If this is <code>"none"</code>, Actions are completely disabled.</li>
+<li><code>allowed_actions</code>: Determines if you can run third-party actions (<code>all</code>, <code>local_only</code>, or <code>selected</code>).</li>
+</ul>
+<h4 id="step-2-check-repository-level-actions-permissions">Step 2: Check Repository-Level Actions Permissions<a class="headerlink" href="#step-2-check-repository-level-actions-permissions" title="Permanent link">&para;</a></h4>
+<p>Check if Actions are enabled on your specific repository.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">GitHub CLI</label><label for="__tabbed_2_2">cURL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gh<span class="w"> </span>api<span class="w"> </span>repos/<span class="o">{</span>owner<span class="o">}</span>/<span class="o">{</span>repo<span class="o">}</span>/actions/permissions
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GITHUB_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/vnd.github+json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">     </span>https://api.github.com/repos/<span class="o">{</span>owner<span class="o">}</span>/<span class="o">{</span>repo<span class="o">}</span>/actions/permissions
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>What to look for in the JSON response:</strong></p>
+<ul>
+<li><code>enabled</code>: Must be <code>true</code> for workflows to run.</li>
+</ul>
+<h4 id="step-3-check-default-workflow-permissions-token-write-scopes">Step 3: Check Default Workflow Permissions (Token Write Scopes)<a class="headerlink" href="#step-3-check-default-workflow-permissions-token-write-scopes" title="Permanent link">&para;</a></h4>
+<p>Check if workflows have read/write access and if they can approve pull requests by default.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">GitHub CLI</label><label for="__tabbed_3_2">cURL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gh<span class="w"> </span>api<span class="w"> </span>repos/<span class="o">{</span>owner<span class="o">}</span>/<span class="o">{</span>repo<span class="o">}</span>/actions/permissions/workflow
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GITHUB_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/vnd.github+json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">     </span>https://api.github.com/repos/<span class="o">{</span>owner<span class="o">}</span>/<span class="o">{</span>repo<span class="o">}</span>/actions/permissions/workflow
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>What to look for in the JSON response:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;default_workflow_permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;write&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;can_approve_pull_request_reviews&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If <code>default_workflow_permissions</code> returns <code>"read"</code>, your bot workflows <strong>cannot</strong> append templates or perform automated remediation without a custom personal access token (PAT).</p>
+</div>
+<h2 id="how-to-implement-faq-validation-checks">🛠️ How-To: Implement FAQ Validation Checks<a class="headerlink" href="#how-to-implement-faq-validation-checks" title="Permanent link">&para;</a></h2>
+<p>When changes are proposed to FAQ documentation, the PR review pipeline must enforce structure, style, and metadata updates. Depending on your repository's technical constraints, choose <strong>one</strong> of the three methods below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>              Enforcement Method Selection
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>              ───────────────────────────
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>                           │
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>       Is `.github/workflows/` available &amp; writeable?
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>                   ┌───────────┴───────────┐
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>                   ▼                       ▼
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>                [ YES ]                 [ NO ]
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>                   │                       │
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    Are you enforcing strictly?     Have Org-Level Admin?
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>       ┌───────────┴───────────┐       ┌───────┴───────┐
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>       ▼                       ▼       ▼               ▼
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>   [Method 1]             [Method 3] [Method A]   [Method B]
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>(Auto-Append Bot)     (Status Blocker) (Org Repo) (Query URL)
+</code></pre></div>
+<h3 id="method-1-the-auto-append-bot-preferred">Method 1: The Auto-Append Bot (Preferred)<a class="headerlink" href="#method-1-the-auto-append-bot-preferred" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use this method if GitHub Actions are enabled and the workflow path and permissions are writeable. This script automatically appends the FAQ validation checklist to any PR altering an FAQ markdown file.</p>
+</div>
+<p>Create a workflow file at <code>.github/workflows/faq-governance.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FAQ Governance &amp; Audit Enforcer</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">on</span><span class="p">:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">opened</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">edited</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**/*FAQ*.md&#39;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**/*faq*.md&#39;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="nt">inject-faq-audit-checklist</span><span class="p">:</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">      </span><span class="nt">pull-requests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out repository</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Append Governance Checklist</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">          </span><span class="nt">GH_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">          </span><span class="nt">PR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.event.pull_request.html_url }}</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">          </span><span class="nt">PR_BODY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.event.pull_request.body }}</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">          </span><span class="no">MARKER=&quot;&lt;!-- FAQ_GOVERNANCE_CHECKLIST_MARKER --&gt;&quot;</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">          </span><span class="no"># Idempotency check: Don&#39;t append if it&#39;s already there</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">          </span><span class="no">if echo &quot;$PR_BODY&quot; | grep -q &quot;$MARKER&quot;; then</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">            </span><span class="no">echo &quot;Governance checklist already present. Skipping.&quot;</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">            </span><span class="no">exit 0</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">          </span><span class="no">fi</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">          </span><span class="no">GOVERNANCE_BLOCK=$(cat &lt;&lt; &#39;EOF&#39;</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">          </span><span class="no">&lt;!-- FAQ_GOVERNANCE_CHECKLIST_MARKER --&gt;</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="w">          </span><span class="no">---</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">          </span><span class="no">## 📋 Required FAQ Governance Audit</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">          </span><span class="no">*This PR alters FAQ content. Reviewers and contributors must verify the following criteria before merging.*</span>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">          </span><span class="no">### 🏗️ FAQ Organization &amp; Structure</span>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">          </span><span class="no">- [ ] **Topic Alignment:** All QA pairs belong strictly within this specific page topic.</span>
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">          </span><span class="no">- [ ] **Density Check:** This page does **not** exceed 10–15 QA pairs.</span>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">          </span><span class="no">- [ ] **Scope Control:** Answers do not introduce long concepts, troubleshooting guides, or complex procedures.</span>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">          </span><span class="no">- [ ] **Isolation:** No QA pairs are placed outside designated FAQ documents.</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="w">          </span><span class="no">### ✍️ Content Quality &amp; Grammar</span>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="w">          </span><span class="no">- [ ] **Grammar Check:** Every &quot;question&quot; is structured as an actual grammatical question.</span>
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a><span class="w">          </span><span class="no">- [ ] **Conciseness:** Answers are brief and do not exceed 2 to 3 sentences.</span>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a><span class="w">          </span><span class="no">- [ ] **Hyperlink Integrity:** Answers referring to external/internal resources include direct links.</span>
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a><span class="w">          </span><span class="no">- [ ] **Deduplication:** This QA pair does not duplicate content found in other sections or pages.</span>
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="w">          </span><span class="no">- [ ] **Consistency:** The answers do not contradict other live pages or established FAQ topics.</span>
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="w">          </span><span class="no">### 🔑 Metadata &amp; Navigation</span>
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="w">          </span><span class="no">- [ ] **Audit Trail:** The `lastCertified` front-matter metadata tag has been updated to reflect this review.</span>
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="w">          </span><span class="no">- [ ] **Navigation Sync:** If content was moved or a new page was recommended, `mkdocs.yml` has been updated.</span>
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a><span class="w">          </span><span class="no">EOF</span>
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="w">          </span><span class="no">)</span>
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a><span class="w">          </span><span class="no">NEW_BODY=&quot;$PR_BODY&quot;$&#39;\n&#39;&quot;$GOVERNANCE_BLOCK&quot;</span>
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a><span class="w">          </span><span class="no">echo &quot;$NEW_BODY&quot; | gh pr edit &quot;$PR_URL&quot; --body-file -</span>
+</code></pre></div>
+<h3 id="method-2-manual-organization-level-selection-alternative-a">Method 2: Manual Organization-Level Selection (Alternative A)<a class="headerlink" href="#method-2-manual-organization-level-selection-alternative-a" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Use this method if the local repository's <code>.github/workflows</code> path is blocked, but you have Org-level Administrator access.</p>
+</div>
+<p><strong>Terminal Execution:</strong></p>
+<ol>
+<li>
+<p><strong>Create the global <code>.github</code> repository</strong> under your organization:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>gh<span class="w"> </span>repo<span class="w"> </span>create<span class="w"> </span><span class="o">{</span>org_name<span class="o">}</span>/.github<span class="w"> </span>--public<span class="w"> </span>--description<span class="w"> </span><span class="s2">&quot;Global organization templates&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Clone the repository locally:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span class="o">{</span>org_name<span class="o">}</span>/.github.git
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span><span class="w"> </span>.github
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Establish the PR template directory structure:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>.github/PULL_REQUEST_TEMPLATE
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Write the governance template</strong> to a template markdown file:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39; &gt; .github/PULL_REQUEST_TEMPLATE/faq_markdown_template.md</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s">## FAQ Governance Validation Required</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="s">- [ ] Verified FAQ answers are under 3 sentences.</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="s">- [ ] No procedural instructions or troubleshooting details are included.</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s">- [ ] `lastCertified` metadata in front matter has been updated.</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="s">EOF</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Commit and push</strong> the changes to the default branch:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add global faq pr template&quot;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="method-3-the-query-parameter-url-link-alternative-b">Method 3: The Query Parameter URL Link (Alternative B)<a class="headerlink" href="#method-3-the-query-parameter-url-link-alternative-b" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Use this method if both local repository workflows and organization-level repository creation are locked.</p>
+</div>
+<p>GitHub natively parses query parameters passed via the compare URL. You can bundle your checklist into a pre-formatted link or browser bookmarklet for your writing team.</p>
+<p>Construct the URL template as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>https://github.com/OWNER/REPO/compare/main...BRANCH_NAME?title=[FAQ]+Topic+Update&amp;body=%23%23+FAQ+Governance+Audit%0A-%20%5B%20%5D+Density%3A+Does+not+exceed+10-15+pairs%0A-%20%5B%20%5D+Metadata%3A+lastCertified+is+updated%0A-%20%5B%20%5D+Navigation%3A+mkdocs.yml+updated
+</code></pre></div>
+<p>When clicked, this automatically populates the PR creation canvas with the required validation checkboxes.</p>
+<h2 id="troubleshooting-common-workflow-failures">🔍 Troubleshooting: Common Workflow Failures<a class="headerlink" href="#troubleshooting-common-workflow-failures" title="Permanent link">&para;</a></h2>
+<h3 id="issue-1-github-cli-fails-with-resource-not-accessible-by-integration">Issue 1: GitHub CLI fails with "Resource not accessible by integration"<a class="headerlink" href="#issue-1-github-cli-fails-with-resource-not-accessible-by-integration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Symptoms:</strong> The Action runs, but terminates at the <code>gh pr edit</code> step with an HTTP 403 error.</li>
+<li><strong>Root Cause:</strong> The default <code>GITHUB_TOKEN</code> is operating in read-only mode, or the workflow file does not explicitly declare its permission scopes.</li>
+<li><strong>Mitigation:</strong> Ensure your workflow file contains the explicit permissions block directly beneath the job header:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">append-validation-list</span><span class="p">:</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">      </span><span class="nt">pull-requests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+</code></pre></div>
+<h3 id="issue-2-workflow-is-not-triggering-on-faq-file-changes">Issue 2: Workflow is not triggering on FAQ file changes<a class="headerlink" href="#issue-2-workflow-is-not-triggering-on-faq-file-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Symptoms:</strong> An FAQ Markdown file is pushed, but the Action does not run.</li>
+<li><strong>Root Cause:</strong> Path mapping matches are case-sensitive or directory boundaries are failing to capture nested structures.</li>
+<li><strong>Mitigation:</strong> Always use double asterisks (<code>**</code>) to traverse deep nested directories, and explicitly account for case variations in filenames:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">paths</span><span class="p">:</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**/*FAQ*.md&#39;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**/*faq*.md&#39;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**/*Faq*.md&#39;</span>
+</code></pre></div>
+<h3 id="issue-3-workflow-fails-on-enterprise-enforced-read-only-tokens">Issue 3: Workflow fails on Enterprise-enforced read-only tokens<a class="headerlink" href="#issue-3-workflow-fails-on-enterprise-enforced-read-only-tokens" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Enterprise-enforced read-only token scopes cannot be overridden at the repository level.</p>
+</div>
+<ul>
+<li><strong>Symptoms:</strong> You have configured <code>permissions: write</code> in your workflow, but the job still fails with write permission errors.</li>
+<li><strong>Root Cause:</strong> The parent enterprise has a global security policy enforcing read-only <code>GITHUB_TOKEN</code> scopes across all child orgs/repositories, blocking local job overrides.</li>
+<li><strong>Mitigation:</strong> You must use <strong>Method 2 (Alternative A)</strong> or <strong>Method 3 (Alternative B)</strong>, or contact your enterprise GHEC administrator to request an exemption or a dedicated GitHub App credentials setup.</li>
+</ul>
+<h2 id="reference-reviewer-verification-checklists">📋 Reference: Reviewer Verification Checklists<a class="headerlink" href="#reference-reviewer-verification-checklists" title="Permanent link">&para;</a></h2>
+<p>These checklists represent the core criteria for FAQ reviews and must be validated during human peer-review stages before merging any FAQ pull request. For the full step-by-step reviewer workflow, see the <a href="../faq-reviews/">FAQ PR Review Guide</a>.</p>
+<h3 id="faq-structural-organization-rules">FAQ Structural &amp; Organization Rules<a class="headerlink" href="#faq-structural-organization-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Topic Boundary:</strong> All question/answer pairs must reside on the specific FAQ page mapped to that system. Do not allow general answers to drift into mismatched technical areas.</li>
+<li><strong>Density Boundary:</strong> FAQ pages must not exceed 10–15 question/answer pairs. If a topic grows beyond this count, the reviewer must request that the page be split into logical sub-topics.</li>
+<li><strong>Extraction Rule:</strong> Answers are strictly limited to <strong>two or three sentences</strong>. If an answer introduces conceptual theory, troubleshooting pathways, or step-by-step procedure, the reviewer <strong>must</strong> reject the PR and instruct the contributor to extract that content into a separate Conceptual, Troubleshooting, or Task page.</li>
+<li><strong>Deduplication:</strong> A question/answer pair must not exist on any other page or section.</li>
+</ul>
+<h3 id="metadata-compliance-rules">Metadata Compliance Rules<a class="headerlink" href="#metadata-compliance-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Metadata Stamp:</strong> The page's front-matter metadata configuration must include a <code>lastCertified</code> stamp. This date must be manually updated to the current date on any PR modifying the page's contents.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nn">---</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Integration FAQ</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">lastCertified</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-06-17</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nn">---</span>
+</code></pre></div>
+<ul>
+<li><strong>Navigation Alignment:</strong> If content extraction yields a new documentation page, the PR must include corresponding updates to the <code>mkdocs.yml</code> outline configuration file to ensure navigation rendering remains unbroken.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

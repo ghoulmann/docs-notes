@@ -1,0 +1,1010 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for repository configurations">
+      
+      
+        <meta name="author" content="Rik Goldman">
+      
+      
+      
+        <link rel="prev" href="../faq-governance/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PR Review Guide - Repo Configs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-documentation-and-contribution-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Repo Configs" class="md-header__button md-logo" aria-label="Repo Configs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Repo Configs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PR Review Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../faq-governance/" class="md-tabs__link">
+          
+  
+  
+  FAQ Management
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Repo Configs" class="md-nav__button md-logo" aria-label="Repo Configs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Repo Configs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance & Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PR Review Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PR Review Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faq-architecture-and-governance-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ Architecture and Governance Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ Architecture and Governance Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-limits-of-an-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Limits of an FAQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-an-faq-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review an FAQ Pull Request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Review an FAQ Pull Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-verify-faq-page-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Verify FAQ Page Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-evaluate-individual-qa-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Evaluate Individual Q&amp;A Pairs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-validate-page-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Validate Page Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-approve-or-request-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Approve or Request Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolving-out-of-scope-and-bloated-faq-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolving Out-of-Scope and Bloated FAQ Content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolving Out-of-Scope and Bloated FAQ Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-the-faq-answer-contains-how-to-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: The FAQ Answer Contains "How-To" Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-the-faq-answer-explains-a-foundational-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: The FAQ Answer Explains a Foundational "Concept"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-no-existing-page-fits-the-relocated-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: No Existing Page Fits the Relocated Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-the-faq-section-is-too-long-over-15-qas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: The FAQ Section is Too Long (Over 15 Q&amp;As)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faq-architecture-and-governance-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ Architecture and Governance Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ Architecture and Governance Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-limits-of-an-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Limits of an FAQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-an-faq-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review an FAQ Pull Request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Review an FAQ Pull Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-verify-faq-page-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Verify FAQ Page Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-evaluate-individual-qa-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Evaluate Individual Q&amp;A Pairs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-validate-page-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Validate Page Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-approve-or-request-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Approve or Request Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolving-out-of-scope-and-bloated-faq-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolving Out-of-Scope and Bloated FAQ Content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolving Out-of-Scope and Bloated FAQ Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-the-faq-answer-contains-how-to-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: The FAQ Answer Contains "How-To" Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-the-faq-answer-explains-a-foundational-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: The FAQ Answer Explains a Foundational "Concept"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-no-existing-page-fits-the-relocated-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: No Existing Page Fits the Relocated Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-the-faq-section-is-too-long-over-15-qas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem: The FAQ Section is Too Long (Over 15 Q&amp;As)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq-documentation-and-contribution-management">FAQ Documentation and Contribution Management<a class="headerlink" href="#faq-documentation-and-contribution-management" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">See also</p>
+<p>For automated enforcement, GitHub Actions workflows, and GHEC permission setup,
+see <a href="../faq-governance/">FAQ Governance &amp; Automation</a>.</p>
+</div>
+<p>This guide establishes the standards and workflows for maintaining high-quality FAQ (Frequently Asked Questions) sections. By enforcing strict separation of concerns, we preserve the integrity of our user experience, ease governance, and ensure clear audit trails.</p>
+<h2 id="faq-architecture-and-governance-principles">FAQ Architecture and Governance Principles<a class="headerlink" href="#faq-architecture-and-governance-principles" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>FAQs are highly visible entry points for users, but they easily degrade into "dumping grounds" for content that belongs elsewhere. Managing FAQ contributions actively at the Pull Request (PR) stage secures four key operational pillars.</p>
+</div>
+<ol>
+<li><strong>User Experience (UX):</strong> Users expect FAQs to provide rapid, punchy, and direct answers to highly specific questions. When FAQs are clean, users resolve doubts without searching through extensive manuals.</li>
+<li><strong>Governance and Lifecycle Management:</strong> Small, discrete question-and-answer (Q&amp;A) pairs are easier to update, deprecate, and track for accuracy over time.</li>
+<li><strong>Separation of Duties:</strong> Enforcing topic types ensures technical writers, product managers, and engineers own and verify the specific content matching their expertise.</li>
+<li><strong>Audit and Compliance:</strong> Clean metadata tracking (such as certification dates) ensures documentation meets regulatory or organizational compliance standards.</li>
+</ol>
+<h3 id="the-limits-of-an-faq">The Limits of an FAQ<a class="headerlink" href="#the-limits-of-an-faq" title="Permanent link">&para;</a></h3>
+<p>To maintain readability and cognitive ease, an FAQ topic must respect strict boundaries:</p>
+<ul>
+<li><strong>Quantities:</strong> An individual FAQ page should contain no more than 10–15 Q&amp;A pairs.</li>
+<li><strong>Length:</strong> Answers must not exceed two to three sentences.</li>
+<li><strong>Type Separation:</strong> FAQ answers must never introduce new concepts, troubleshoot complex errors, or outline multi-step procedures. These belong in dedicated <strong>Concept</strong>, <strong>Troubleshooting</strong>, or <strong>How-to</strong> pages respectively.</li>
+</ul>
+<h2 id="review-an-faq-pull-request">Review an FAQ Pull Request<a class="headerlink" href="#review-an-faq-pull-request" title="Permanent link">&para;</a></h2>
+<p>Follow these steps to systematically review incoming Pull Requests (PRs) that propose additions or modifications to FAQ pages.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Access to the project's documentation repository and pull request interface.</li>
+<li>Familiarity with the documentation navigation structure (<code>mkdocs.yml</code> or equivalent).</li>
+</ul>
+<h3 id="step-1-verify-faq-page-organization">Step 1: Verify FAQ Page Organization<a class="headerlink" href="#step-1-verify-faq-page-organization" title="Permanent link">&para;</a></h3>
+<p>Ensure the proposed Q&amp;A pairs are located on the correct page and do not exceed structural limits.</p>
+<ol>
+<li>Check that the Q&amp;A pairs reside within an explicit FAQ document/section.</li>
+<li>Count the total Q&amp;As on the target page. If the new additions push the total count beyond <strong>10–15 pairs</strong>, flag the PR and request that the page be split.</li>
+<li>Verify that the Q&amp;As are grouped logically under appropriate subheadings.</li>
+</ol>
+<h3 id="step-2-evaluate-individual-qa-pairs">Step 2: Evaluate Individual Q&amp;A Pairs<a class="headerlink" href="#step-2-evaluate-individual-qa-pairs" title="Permanent link">&para;</a></h3>
+<p>Audit the format and content of each proposed pair:</p>
+<ol>
+<li><strong>The Question:</strong> Verify that the "question" is phrased as an actual, grammatical question ending with a question mark.</li>
+<li><strong>The Answer:</strong> Ensure the answer does not exceed <strong>two to three sentences</strong>.</li>
+<li><strong>References:</strong> Check all mentioned external resources or internal pages. Ensure they contain live, functional inline hyperlinks. Do not allow plain-text references to other sites.</li>
+<li><strong>Uniqueness:</strong> Search the existing documentation to verify that the proposed Q&amp;A pair does not duplicate an existing entry.</li>
+<li><strong>Accuracy:</strong> Cross-reference the answer with core product behavior to ensure it does not contradict other documentation pages.</li>
+</ol>
+<h3 id="step-3-validate-page-metadata">Step 3: Validate Page Metadata<a class="headerlink" href="#step-3-validate-page-metadata" title="Permanent link">&para;</a></h3>
+<p>Ensure tracking metadata is updated correctly to keep the document certified.</p>
+<ol>
+<li>Locate the front-matter metadata at the top of the modified markdown file.</li>
+<li>Verify that the <code>lastCertified</code> date (or equivalent review timestamp) has been updated to the current date.</li>
+</ol>
+<h3 id="step-4-approve-or-request-changes">Step 4: Approve or Request Changes<a class="headerlink" href="#step-4-approve-or-request-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If all checks pass, approve the PR.</li>
+<li>If any check fails, leave specific, actionable comments on the PR citing the rules in this guide.</li>
+</ul>
+<h2 id="resolving-out-of-scope-and-bloated-faq-content">Resolving Out-of-Scope and Bloated FAQ Content<a class="headerlink" href="#resolving-out-of-scope-and-bloated-faq-content" title="Permanent link">&para;</a></h2>
+<p>When reviewing FAQ contributions, you will frequently encounter submissions that violate standard FAQ constraints (e.g., answers that are too long, contain procedural steps, or explain complex concepts). Use this guide to help contributors restructure and relocate their content.</p>
+<h3 id="problem-the-faq-answer-contains-how-to-procedures">Problem: The FAQ Answer Contains "How-To" Procedures<a class="headerlink" href="#problem-the-faq-answer-contains-how-to-procedures" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Problem: How-To Content in an FAQ Answer</p>
+<p><strong>Symptoms:</strong> The answer details step-by-step instructions (e.g., "First, click X, then configure Y...") or exceeds three sentences.</p>
+</div>
+<p><strong>Resolution:</strong></p>
+<ol>
+<li>Instruct the contributor to extract the step-by-step procedure into a dedicated <strong>How-to</strong> page.</li>
+<li>Have them replace the bloated FAQ answer with a brief, high-level summary (1–2 sentences) followed by a direct hyperlink to the new How-to page.</li>
+</ol>
+<p><em>Example:</em> "You can configure custom ports during installation. For a complete guide, see <a href="http://docs.google.com/how-to/ports.md">How to Configure Custom Ports</a>."</p>
+<h3 id="problem-the-faq-answer-explains-a-foundational-concept">Problem: The FAQ Answer Explains a Foundational "Concept"<a class="headerlink" href="#problem-the-faq-answer-explains-a-foundational-concept" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Problem: Conceptual Content in an FAQ Answer</p>
+<p><strong>Symptoms:</strong> The answer defines technical architecture, explains design philosophies, or provides deep background information.</p>
+</div>
+<p><strong>Resolution:</strong></p>
+<ol>
+<li>Direct the contributor to move the explanatory prose to a <strong>Concept</strong> page.</li>
+<li>Keep the FAQ question focused, and rewrite the answer to point to the concept page.</li>
+</ol>
+<p><em>Example:</em> "Yes, our platform supports clustering. To understand the underlying cluster architecture and node communication, read our <a href="http://docs.google.com/concepts/clustering.md">Clustering Concepts guide</a>."</p>
+<h3 id="problem-no-existing-page-fits-the-relocated-content">Problem: No Existing Page Fits the Relocated Content<a class="headerlink" href="#problem-no-existing-page-fits-the-relocated-content" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Problem: No Navigation Home for Relocated Content</p>
+<p><strong>Symptoms:</strong> You need to reject/relocate FAQ content, but there is no logical home for the new Topic Type in the current navigation.</p>
+</div>
+<p><strong>Resolution:</strong> Instruct the contributor to create a new page and provide them with the following guidance in your PR review:</p>
+<ol>
+<li><strong>Recommend a Category:</strong> Suggest a new or existing navigation section (e.g., <code>/concepts/</code> or <code>/how-to/</code>).</li>
+<li><strong>Propose a Scalable Title:</strong> Suggest a page title with a broad enough scope to accommodate future growth (e.g., use <em>Authentication Methods</em> instead of <em>How to Log In with Okta</em>).</li>
+<li><strong>Assign the Correct Topic Type:</strong> Expressly declare whether the new page must be structured as a <em>Concept</em>, <em>How-to</em>, or <em>Troubleshooting</em> topic.</li>
+<li><strong>Provide Navigation Instructions:</strong> Instruct the contributor to update the navigation configuration (e.g., <code>mkdocs.yml</code>) to register the new page under the proposed section.</li>
+</ol>
+<h3 id="problem-the-faq-section-is-too-long-over-15-qas">Problem: The FAQ Section is Too Long (Over 15 Q&amp;As)<a class="headerlink" href="#problem-the-faq-section-is-too-long-over-15-qas" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Problem: FAQ Page Density Exceeded</p>
+<p><strong>Symptoms:</strong> A single FAQ page has become difficult to read or navigate due to sheer volume.</p>
+</div>
+<p><strong>Resolution:</strong></p>
+<ol>
+<li>Request that the contributor split the FAQ page into smaller, highly specialized FAQ sub-topics.</li>
+<li>Provide clear suggestions for splitting (e.g., splitting a general <em>Billing FAQ</em> into <em>Invoicing FAQ</em> and <em>Subscription Plans FAQ</em>).</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
