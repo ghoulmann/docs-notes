@@ -28,6 +28,12 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+nav:
+  - Home: index.md
+  - FAQ Management:
+    - Governance & Automation: faq-governance.md
+    - PR Review Guide: faq-reviews.md
+
 plugins:
   - search
 
@@ -45,3 +51,5 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
